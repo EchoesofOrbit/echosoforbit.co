@@ -19,6 +19,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
 
     .overlay {
@@ -55,10 +56,31 @@
     button:hover {
       background-color: #45a29e;
     }
+
+    .rocket {
+      position: absolute;
+      left: -100px;
+      top: 100%;
+      font-size: 60px;
+      z-index: 2;
+      animation: flyDiagonal 8s linear infinite;
+    }
+
+    @keyframes flyDiagonal {
+      0% {
+        top: 100%;
+        left: -100px;
+      }
+      100% {
+        top: -100px;
+        left: 110%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
+  <div class="rocket">🚀</div>
   <div class="content">
     <h1 id="message"></h1>
     <button onclick="window.location.href='https://echoesoforbit.com'">Enter Orbit</button>
